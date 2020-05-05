@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView ItemsSource="{x:Bind ViewModelBlomst.Blomster}"
+        <ListView SelectedItem="{x:Bind ViewModelBlomst.SelectedOrdreBlomst, Mode=TwoWay}" ItemsSource="{x:Bind ViewModelBlomst.Blomster}"
     HorizontalAlignment="Center"
     VerticalAlignment="Center">
             <ListView.ItemTemplate>
@@ -25,7 +25,8 @@
         <TextBox HorizontalAlignment="Left" Margin="120,500,0,0" Description="Navn Blomst" Text="{x:Bind Path=ViewModelBlomst.NavnBlomst, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="216,500,0,0" Description="Antal" Text="{x:Bind Path=ViewModelBlomst.AntalBlomst, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Margin="301,500,0,0" Description="Farve" Text="{x:Bind Mode=TwoWay, Path=ViewModelBlomst.FarveBlomst}" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Command="{x:Bind ViewModelBlomst.AddNyBlomst,Mode=OneWay}" Content="Tilføj Blomst" Height="47" Margin="120,582,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button Command="{x:Bind ViewModelBlomst.AddNyBlomst,Mode=OneWay}" Content="Tilføj blomst" Height="47" Margin="120,582,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button Command="{x:Bind ViewModelBlomst.SletSelectedBlomst,Mode=OneWay}" Content="Slet blomst" Margin="120,662,0,0" VerticalAlignment="Top" Height="47" Width="110"/>
 
     </Grid>
 </Page>

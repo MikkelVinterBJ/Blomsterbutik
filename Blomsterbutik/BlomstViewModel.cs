@@ -18,6 +18,9 @@ namespace Blomsterbutik
         public string FarveBlomst {get; set; }
 
         public RelayCommand AddNyBlomst { get; set; }
+        public OrdreBlomst SelectedOrdreBlomst { get; set; }
+        public RelayCommand SletSelectedBlomst { get; set; }
+
 
         public BlomstViewModel()
         {
@@ -27,6 +30,9 @@ namespace Blomsterbutik
             Blomster.Add(new OrdreBlomst() { Navn = "Rose", Farve = "Lilla", Antal = 3 });
 
             AddNyBlomst = new RelayCommand(AddBlomst);
+            SelectedOrdreBlomst = new OrdreBlomst();
+            SletSelectedBlomst = new RelayCommand(SletBlomst);
+
         }
 
         public void AddBlomst()
@@ -36,5 +42,9 @@ namespace Blomsterbutik
             Blomster.Add(oBlomst);
         }
 
+        public void SletBlomst()
+        {
+            Blomster.Remove(SelectedOrdreBlomst);
+        }
     }
 }
