@@ -15,9 +15,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:OrdreBlomst">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{x:Bind Navn, Mode=TwoWay}"/>
-                        <TextBlock Text="{x:Bind Antal, Mode=TwoWay}"/>
-                        <TextBlock Text="{x:Bind Farve, Mode=TwoWay}"/>
+                        <TextBox Text="{x:Bind Navn, Mode=TwoWay}"/>
+                        <TextBox Text="{x:Bind Antal, Mode=TwoWay}"/>
+                        <TextBox Text="{x:Bind Farve, Mode=TwoWay}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -27,6 +27,8 @@
         <TextBox HorizontalAlignment="Left" Margin="301,500,0,0" Description="Farve" Text="{x:Bind Mode=TwoWay, Path=ViewModelBlomst.FarveBlomst}" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button Command="{x:Bind ViewModelBlomst.AddNyBlomst,Mode=OneWay}" Content="Tilføj blomst" Height="47" Margin="120,582,0,0" VerticalAlignment="Top" Width="110"/>
         <Button Command="{x:Bind ViewModelBlomst.SletSelectedBlomst,Mode=OneWay}" Content="Slet blomst" Margin="120,662,0,0" VerticalAlignment="Top" Height="47" Width="110"/>
+        <Button Command="{x:Bind ViewModelBlomst.GemData, Mode=OneWay}" Content="Gem" Height="36" Margin="120,758,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button Command="{x:Bind ViewModelBlomst.HentData, Mode=OneWay}" Content="Hent" Margin="248,758,0,0" VerticalAlignment="Top" Height="36" Width="117"/>
 
     </Grid>
 </Page>
